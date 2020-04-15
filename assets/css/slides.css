@@ -1,0 +1,29 @@
+.reveal.training section .no-border {
+    border: 0;
+}
+
+.reveal.training section .no-margin {
+    margin: 0;
+}
+
+.reveal.training section .no-background {
+    background: none;
+    box-shadow: none;
+}
+
+.reveal.training section .no-text-transform {
+    text-transform: none;
+}
+
+.reveal.training .highlight {
+    color: #42affa;
+}
+
+.reveal.training code.code {
+    font-size: 0.75em;
+    color: #f92672;
+}
+
+.reveal.training .highlight-secondary {
+    color: #f92672;
+}
