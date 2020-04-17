@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Modern Web Development Training - HTML</title>
+
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/theme/black.css">
+    <link rel="stylesheet" href="../assets/css/slides.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../assets/lib/css/monokai.css">
+
+    <link rel="icon" href="../assets/favicon.ico">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+</head>
+<body>
+<div class="reveal training">
+    <aside style="position: fixed; top: .25rem; left: .25rem; z-index: 1" class="back-to-agenda">
+        <a href="../index.html#agendaDay1"><small>&lt;&nbsp;Back&nbsp;to&nbsp;agenda</small></a>
+    </aside>
+    <div class="slides">
+        <section>
+            <hgroup>
+                <h2 class="no-text-transform highlight-secondary">Hyper Text Markup Language</h2>
+                <h1 class="highlight-secondary">HTML</h1>
+            </hgroup>
+        </section>
+        <section>
+            <h3 class="no-text-transform">HTML</h3>
+            <ul>
+                <li><mark>HTML</mark> is a markup language for <mark>describing the structure</mark> of web documents (web pages)<a href="http://www.w3schools.com/html/html_intro.asp" target="_blank"><small>*</small></a></li>
+                <li>A basic <mark>HTML document</mark> looks like this:<a href="https://html.spec.whatwg.org/multipage/introduction.html#a-quick-introduction-to-html" target="_blank"><small>**</small></a>
+                    <pre><code data-trim class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;Web client crash course&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to a web client crash course&lt;/h1&gt;
+    &lt;p&gt;This is a &lt;a href="demo.html"&gt;simple&lt;/a&gt; sample.&lt;/p&gt;
+    &lt;!-- this is a comment --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+						</code></pre></li>
+            </ul>
+        </section>
+        <section>
+            <h3 class="no-text-transform">HTML elements and tags</h3>
+            <ul>
+                <li>HTML documents consist of a <mark>tree of elements and text</mark>. Each element is denoted in the source by a start <mark>tag</mark>, such as <code class="code">&lt;body&gt;</code>, and an end tag, such as <code class="code">&lt;/body&gt;</code>.</li>
+                <li><mark>Tags have to be nested</mark> so that elements are all completely within each other, without overlapping:
+                    <pre><code data-trim class="html">
+&lt;p&gt;This is &lt;em&gt;very &lt;strong&gt;wrong&lt;/em&gt;!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This &lt;em&gt;is &lt;strong&gt;correct&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt;
+                        </code></pre>
+                </li>
+                <li>
+                    There are exceptions - so called <mark>void-elements</mark> e.g.
+                    <pre><code data-trim class="html">&lt;input type="text"&gt;</code></pre>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3 class="no-text-transform">HTML elements' attributes</h3>
+            <ul>
+                <li>Attributes <mark>control how the elements work</mark> and are placed inside the start tag.</li>
+                <li>Attributes consist of <mark>a name and a value</mark>, separated by an <code class="code"><strong>=</strong></code> character.</li>
+                <li>The <mark>value</mark> can remain <mark>unquoted</mark> if it doesn't contain space characters or any of <code class="code">" ' ` = &gt;</code>&nbsp;or&nbsp;<code class="code">&lt;</code> character.</li>
+                <li>Otherwise, it has to be <mark>quoted</mark> using either single or double quotes. The value, along with the <code class="code">=</code> character, <mark>can be omitted</mark> altogether if the value is the empty string.</li>
+            </ul>
+        </section>
+        <section>
+            <h3 class="no-text-transform">Attributes: examples</h3>
+            <pre><code data-trim class="html">
+&lt;!-- empty attributes --&gt;
+&lt;input type=text disabled&gt;
+&lt;input type=text disabled=""&gt;
+
+&lt;!-- attributes with a value --&gt;
+&lt;input name=text maxlength=200&gt;
+&lt;input name=text maxlength='200'&gt;
+&lt;input name=text maxlength="200"&gt;
+                </code></pre>
+        </section>
+        <section>
+            <h1 class="no-text-transform highlight-secondary">Exercise HTML</h1>
+        </section>
+        <section id="htmlExercise">
+            <h2 class="no-text-transform">Exercise HTML</h2>
+            <ul>
+                <li>Create an HTML document (index.html) having a header, a footer and a main content area. Make use of the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header" target="_blank"><code class="code">&lt;header&gt;</code></a> and <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer"><code class="code">&lt;footer&gt;</code></a> elements.</li>
+                <li>The header contains a navigation link to the home page (make use of the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav" target="_blank"><code class="code">&lt;nav&gt;</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank"><code class="code">&lt;a&gt;</code></a> elements); the footer contains copyright information.</li>
+                <li>Add a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form" target="_blank"><code class="code">&lt;form&gt;</code></a> to the main content area. The form consists of two <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" target="_blank"><code class="code">&lt;input&gt;</code></a> fields (first and last name) along with <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label" target="_blank"><code class="code">&lt;label&gt;</code></a>s and a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" target="_blank"><code class="code">&lt;button&gt;</code></a></li>
+            </ul>
+        </section>
+    </div>
+</div>
+
+<script src="../assets/js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        hash: true,
+        dependencies: [
+            { src: '../assets/plugin/markdown/marked.js' },
+            { src: '../assets/plugin/markdown/markdown.js' },
+            { src: '../assets/plugin/notes/notes.js', async: true },
+            { src: '../assets/plugin/highlight/highlight.js', async: true }
+        ]
+    });
+</script>
+</body>
+</html>
