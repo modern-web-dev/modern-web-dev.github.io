@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Exercises (Modern Web Development Training)</title>
+
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/theme/black.css">
+    <link rel="stylesheet" href="../assets/css/slides.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../assets/lib/css/monokai.css">
+
+    <link rel="icon" href="../assets/favicon.ico">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+</head>
+<body>
+<div class="reveal training">
+    <aside style="position: fixed; top: .25rem; left: .25rem; z-index: 1" class="back-to-agenda">
+        <a href="../index.html#agendaDay1"><small>&lt;&nbsp;Back&nbsp;to&nbsp;agenda</small></a>
+    </aside>
+    <div class="slides">
+        <section>
+            <h3 class="no-text-transform highlight-secondary">Exercises</h3>
+            <ul>
+                <li><a href="#html">HTML - A simple page and a form</a></li>
+                <li><a href="#css1">CSS - Block and inline elements (styles)</a></li>
+                <li><a href="#css2">CSS - Block and inline elements (markup)</a></li>
+                <li><a href="#css3">CSS - Flexbox</a></li>
+            </ul>
+        </section>
+        <section id="html">
+            <h2 class="no-text-transform">Exercise HTML</h2>
+            <ul>
+                <li>Create an HTML document (index.html) having a header, a footer and a main content area. Make use of the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header" target="_blank"><code class="code">&lt;header&gt;</code></a> and <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer"><code class="code">&lt;footer&gt;</code></a> elements.</li>
+                <li>The header contains a navigation link to the home page (make use of the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav" target="_blank"><code class="code">&lt;nav&gt;</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank"><code class="code">&lt;a&gt;</code></a> elements); the footer contains copyright information.</li>
+                <li>Add a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form" target="_blank"><code class="code">&lt;form&gt;</code></a> to the main content area. The form consists of two <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" target="_blank"><code class="code">&lt;input&gt;</code></a> fields (first and last name) along with <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label" target="_blank"><code class="code">&lt;label&gt;</code></a>s and a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" target="_blank"><code class="code">&lt;button&gt;</code></a></li>
+            </ul>
+        </section>
+        <section id="css1">
+            <h3 class="no-text-transform">Block and inline elements (styles)</h3>
+
+            <p>Add CSS styles so that the following is rendered: <img src="../assets/img/exercise-css-1.png" class="no-border no-margin"></p>
+            <pre><code data-trim class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;title&gt;CSS Exercise 1&lt;/title&gt;
+  &lt;style&gt;/* Add styles here */&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Do not modify HTML --&gt;
+  &lt;div&gt;&lt;div&gt;1&lt;/div&gt;&lt;div&gt;2&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;3&lt;/div&gt;&lt;div&gt;4&lt;/div&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+						</code></pre>
+        </section>
+        <section id="css2">
+            <section>
+                <h3 class="no-text-transform">Block and inline elements (markup) 1/2</h3>
+
+                <p>Add HTML...</p>
+                <pre><code data-trim class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;title&gt;CSS Exercise 2&lt;/title&gt;
+  &lt;style&gt;
+    /* Do not modify CSS */
+    input {
+      display: block;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .container {
+      display: inline-block;
+    }
+
+    .round input {
+      border-radius: 5px;
+    }
+
+    input.gray {
+      background: #ededed;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Add HTML --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+						</code></pre>
+            </section>
+            <section>
+                <h3 class="no-text-transform">Block and inline elements (markup) 2/2</h3>
+                <p>...so that the following is rendered: <img src="../assets/img/exercise-css-2.png"></p>
+            </section>
+
+        </section>
+        <section id="css3">
+            <section>
+                <h2 class="no-text-transform">CSS Flexbox 1/2</h2>
+                <ul>
+                    <li>Create a CSS file (<code class="code">styles.css</code>) next to the <code class="code">index.html</code> created in the <a href="#html">HTML exercise</a>.</li>
+                    <li>Using the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link" target="_blank"><code class="code">&lt;link&gt;</code></a> element link the HTML document with the CSS file.</li>
+                    <li>Write CSS rule-sets which set the form's margin to 20px and the inputs' bottom margins to 5px</li>
+                </ul>
+            </section>
+            <section>
+                <h2 class="no-text-transform">CSS Flexbox 2/2</h2>
+                <p>Make use of <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">flexbox</a> to lay out the form's labels, inputs and button so that the form looks like this:</p>
+                <img src="../assets/img/form-styled.png">
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="../assets/js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        hash: true,
+        dependencies: [
+            { src: '../assets/plugin/markdown/marked.js' },
+            { src: '../assets/plugin/markdown/markdown.js' },
+            { src: '../assets/plugin/notes/notes.js', async: true },
+            { src: '../assets/plugin/highlight/highlight.js', async: true }
+        ]
+    });
+</script>
+</body>
+</html>
