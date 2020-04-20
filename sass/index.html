@@ -103,6 +103,7 @@
                 </table>
             </section>
             <section>
+            <section>
                 <h2 class="no-text-transform highlight">Sass variables</h2>
                 <table>
                     <tr>
@@ -115,8 +116,7 @@
                     </tr>
                 </table>
                 <p class="highlight-secondary">They are removed during compilation</p>
-            </section>
-           
+            </section>  
             <section>
                 <h2 class="no-text-transform highlight">CSS variables</h2>
                 <table>
@@ -130,6 +130,34 @@
                     </tr>
                 </table>
                 <p class="highlight-secondary">They still exist during runtime</p>
+            </section>
+            <section>
+                <h2 class="no-text-transform highlight">Default values</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="../assets/img/defaultValues01-scss.png">
+                        </td>
+                        <td>
+                            <img src="../assets/img/defaultValues01-css.png">
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h2 class="no-text-transform highlight">Variables sope</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="../assets/img/variablesScope01-scss.png">
+                        </td>
+                        <td>
+                            <img src="../assets/img/variablesScope01-css.png">
+                        </td>
+                    </tr>
+                </table>
+                <mark>The global variable shadowed by the local one</mark>
+            </section>
             </section>
             <section >
                 <h2 class="no-text-transform highlight">Values</h2>
@@ -155,7 +183,24 @@
                     <li>
                         null
                     </li>
+                    <li>
+                        Functions
+                    </li>
                 </ul>
+            </section>
+            <section>
+                <h2 class="no-text-transform highlight">Built-in values</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="../assets/img/builtInValues01-scss.png">
+                        </td>
+                        <td>
+                            <img src="../assets/img/builtInValues01-css.png">
+                        </td>
+                    </tr>
+                </table>
+                <mark>Built-in values cannot be overwritten</mark>
             </section>
             <section>
                 <h1 class="no-text-transform highlight-secondary">Exercise Sass</h1>
@@ -214,6 +259,9 @@
                         </td>
                         <td>
                             <ul top="0px;">
+                                <li>
+                                   <code class="code"> @debug @warn @error</code>
+                                </li>
                                 <li>
                                     sass:color
                                 </li>
