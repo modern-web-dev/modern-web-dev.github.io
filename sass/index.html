@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Modern Web Development Training - Sass</title>
+
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/theme/black.css">
+    <link rel="stylesheet" href="../assets/css/slides.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../assets/lib/css/monokai.css">
+
+    <link rel="icon" href="../assets/favicon.ico">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal training">
+        <aside style="position: fixed; top: .25rem; left: .25rem; z-index: 1" class="back-to-agenda">
+            <a href="../index.html#agendaDay1"><small>&lt;&nbsp;Back&nbsp;to&nbsp;agenda</small></a>
+        </aside>
+        <div class="slides">
+            <section>
+                <hgroup>
+                    <h1 class="highlight-secondary">Sass</h1>
+                    <h3 class="no-text-transform highlight">Syntactically Awesome Style Sheets</h3>
+                    <a href="https://sass-lang.com/">https://sass-lang.com/</a>
+                </hgroup>
+            </section>
+            <section>
+                <h2 class="no-text-transform highlight">Sass</h2>
+                <ul>
+                    <li>It is a preprocessor scripting language that is compiled into Cascading Style Sheets<a
+                            href="https://sass-lang.com/" target="_blank"><small>*</small></a></li>
+                    <li>And it comes with two syntax flavours<a href="https://sass-lang.com/guide"
+                            target="_blank"><small>**</small></a></li>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="../assets/img/SCSS.png">
+                            </td>
+                            <td>
+                                <img src="../assets/img/Sass.png">
+                            </td>
+                        </tr>
+                    </table>
+            </section>
+            <section>
+                <h2 class="no-text-transform highlight">Sass setup</h2>
+                <ul>
+                    <li>Step #1 - install Node.js LTS edition <a
+                        href="https://nodejs.org/en/" target="_blank"><small>*</small></a></li>
+                    <li>Step #2 - install Sass CLI</li>
+                   
+                        <code class="code">
+                            &gt;&nbsp;npm install -g sass
+                        </code>
+                 
+                    <li>
+                        Step #3 - let's begin to compile Sass files</li>
+                        <code class="code">&gt;&nbsp;sass src/index.scss dist/index.css</code>
+                    
+                </ul>
+                <p><mark>In real world projects we mostly won't take these steps. We'll use a bundler or a JS framework instead.</mark></p>
+            </section>
+            <section>
+                <h2 class="no-text-transform highlight">Nesting</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="../assets/img/nesting01-scss.png">
+                        </td>
+                        <td>
+                            <img src="../assets/img/nesting01-css.png">
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h2 class="no-text-transform highlight">Nesting: parent selector</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="../assets/img/nesting02-scss.png">
+                        </td>
+                        <td>
+                            <img src="../assets/img/nesting02-css.png">
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h2 class="no-text-transform highlight">Sass variables</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="../assets/img/variables01-scss.png">
+                        </td>
+                        <td>
+                            <img src="../assets/img/variables01-css.png">
+                        </td>
+                    </tr>
+                </table>
+                <p class="highlight-secondary">They are removed during compilation</p>
+            </section>
+           
+            <section>
+                <h2 class="no-text-transform highlight">CSS variables</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="../assets/img/variables02-scss.png">
+                        </td>
+                        <td>
+                            <img src="../assets/img/variables02-css.png">
+                        </td>
+                    </tr>
+                </table>
+                <p class="highlight-secondary">They still exist during runtime</p>
+            </section>
+            <section >
+                <h2 class="no-text-transform highlight">Values</h2>
+                <ul>
+                    <li>
+                        Numbers
+                    </li>
+                    <li>
+                        Strings
+                    </li>
+                    <li>
+                        Colors
+                    </li>
+                    <li>
+                        Lists
+                    </li>
+                    <li>
+                        Map
+                    </li>
+                    <li>
+                        Booleans
+                    </li>
+                    <li>
+                        null
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h1 class="no-text-transform highlight-secondary">Exercise Sass</h1>
+            </section>
+            <section >
+                <h2 class="no-text-transform highlight">Inheritance</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="../assets/img/inheritance01-scss.png">
+                        </td>
+                        <td>
+                            <img src="../assets/img/inheritance01-css.png">
+                        </td>
+                    </tr>
+                </table>
+                <p>If a class is marked as a placeholder with <code class="code">%</code> sign, it will be rendered if extended only</p>
+            </section>
+            <section >
+                <h2 class="no-text-transform highlight">Mixins</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="../assets/img/mixins01-scss.png">
+                        </td>
+                        <td>
+                            <img src="../assets/img/mixins01-css.png">
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section >
+                <h2 class="no-text-transform highlight">Partials</h2>
+                <ul>
+                    <li>
+                        It's reasonable to extract common codebase into separate partial files. E.g. <code class="code">_variables.scss, _mixins.scss, _classes.scss</code>
+                    </li>
+                    <li>
+                        Import them with <code class="code">@use</code> at-rule, <br>
+                        e. g. <code class="code">@use './common/variables' as var</code>
+                    </li>
+                    <li>
+                        <code class="code">@import</code> at-rule is also allowed, although it is obsolete and highly discouraged.
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h1 class="no-text-transform highlight-secondary">Exercise Sass</h1>
+            </section>
+            <section >
+                <h2 class="no-text-transform highlight">Functions and flow control</h2>
+                <table>
+                    <tr>
+                        <td width="50%">
+                            <img src="../assets/img/functions01-scss.png">
+                        </td>
+                        <td>
+                            <ul top="0px;">
+                                <li>
+                                    sass:color
+                                </li>
+                                <li>
+                                    sass:list
+                                </li>
+                                <li>
+                                    sass:map
+                                </li>
+                                <li>
+                                    sass:math
+                                </li>
+                                <li>
+                                    sass:meta
+                                </li>
+                                <li>
+                                    sass:selector
+                                </li>
+                                <li>
+                                    sass:string
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section >
+                <h1 class="no-text-transform highlight-secondary">Demo</h1>
+            </section>
+        </div>
+    </div>
+
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            hash: true,
+            dependencies: [
+                { src: '../assets/plugin/markdown/marked.js' },
+                { src: '../assets/plugin/markdown/markdown.js' },
+                { src: '../assets/plugin/notes/notes.js', async: true },
+                { src: '../assets/plugin/highlight/highlight.js', async: true }
+            ]
+        });
+    </script>
+</body>
+
+</html>
