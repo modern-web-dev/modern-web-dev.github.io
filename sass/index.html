@@ -160,7 +160,8 @@
                 <mark>The global variable shadowed by the local one</mark>
             </section>
             </section>
-            <section >
+            <section>
+                <section>
                 <h2 class="no-text-transform highlight">Values</h2>
                 <ul>
                     <li>
@@ -176,7 +177,7 @@
                         Lists
                     </li>
                     <li>
-                        Map
+                        Maps
                     </li>
                     <li>
                         Booleans
@@ -188,6 +189,88 @@
                         Functions
                     </li>
                 </ul>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Numbers</h2>
+                    <ul>
+                        <li>
+                            May or may not have units, like 12 or 100px
+                        </li>
+                        <li>
+                            You can mix compatible units like <code class="code">in</code> with <code class="code">px</code><br><code class="code">@debug 4px * 6px; // 24px*px (read "square pixels")</code>
+                        </li>
+                        <li>
+                            While dividing the same units used in numerator and denominator will cancel out
+                        </li>
+                    </ul>
+                    <img src="../assets/img/valuesAndUnits-scss.png" width="300px">
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Strings</h2>
+                    <ul>
+                        <li>
+                            may or may not have quotes, like "Helvetica Neue" or bold.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Colors</h2>
+                    <ul>
+                        <li>
+                            can be referred to by their hex representation or by name, like #c6538c or blue, or returned from functions, like rgb(107, 113, 127) or hsl(210, 100%, 20%).
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Lists</h2>
+                    <ul>
+                        <li>
+                            may be separated by spaces or commas and which may be enclosed in square brackets or no brackets at all, like 1.5em 1em 0 2em, Helvetica, Arial, sans-serif, or [col1-start].
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Maps</h2>
+                    <img src="../assets/img/maps-scss.png">
+                </section>
+                <section >
+                    <h2 class="no-text-transform highlight">Functions and flow control</h2>
+                    <table>
+                        <tr>
+                            <td width="50%">
+                                <img src="../assets/img/functions01-scss.png">
+                            </td>
+                            <td>
+                                <ul top="0px;">
+                                    <li>
+                                       <code class="code"> @debug @warn @error</code>
+                                    </li>
+                                    <li>
+                                        sass:color
+                                    </li>
+                                    <li>
+                                        sass:list
+                                    </li>
+                                    <li>
+                                        sass:map
+                                    </li>
+                                    <li>
+                                        sass:math
+                                    </li>
+                                    <li>
+                                        sass:meta
+                                    </li>
+                                    <li>
+                                        sass:selector
+                                    </li>
+                                    <li>
+                                        sass:string
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
             </section>
             <section>
                 <h2 class="no-text-transform highlight">Built-in values</h2>
@@ -206,7 +289,20 @@
             <section>
                 <h1 class="no-text-transform highlight-secondary">Exercise Sass</h1>
             </section>
-            <section >
+            <section>
+                <h2 class="no-text-transform highlight">Mixins</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="../assets/img/mixins01-scss.png">
+                        </td>
+                        <td>
+                            <img src="../assets/img/mixins01-css.png">
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
                 <h2 class="no-text-transform highlight">Inheritance</h2>
                 <table>
                     <tr>
@@ -219,19 +315,6 @@
                     </tr>
                 </table>
                 <p>If a class is marked as a placeholder with <code class="code">%</code> sign, it will be rendered if extended only</p>
-            </section>
-            <section >
-                <h2 class="no-text-transform highlight">Mixins</h2>
-                <table>
-                    <tr>
-                        <td>
-                            <img src="../assets/img/mixins01-scss.png">
-                        </td>
-                        <td>
-                            <img src="../assets/img/mixins01-css.png">
-                        </td>
-                    </tr>
-                </table>
             </section>
             <section >
                 <h2 class="no-text-transform highlight">Partials</h2>
@@ -250,47 +333,6 @@
             </section>
             <section>
                 <h1 class="no-text-transform highlight-secondary">Exercise Sass</h1>
-            </section>
-            <section >
-                <h2 class="no-text-transform highlight">Functions and flow control</h2>
-                <table>
-                    <tr>
-                        <td width="50%">
-                            <img src="../assets/img/functions01-scss.png">
-                        </td>
-                        <td>
-                            <ul top="0px;">
-                                <li>
-                                   <code class="code"> @debug @warn @error</code>
-                                </li>
-                                <li>
-                                    sass:color
-                                </li>
-                                <li>
-                                    sass:list
-                                </li>
-                                <li>
-                                    sass:map
-                                </li>
-                                <li>
-                                    sass:math
-                                </li>
-                                <li>
-                                    sass:meta
-                                </li>
-                                <li>
-                                    sass:selector
-                                </li>
-                                <li>
-                                    sass:string
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-                </table>
-            </section>
-            <section >
-                <h1 class="no-text-transform highlight-secondary">Demo</h1>
             </section>
         </div>
     </div>
