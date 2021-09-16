@@ -205,6 +205,10 @@ body {
 .reveal small * {
   vertical-align: top; }
 
+.reveal .small {
+  font-size: 0.75em;
+  line-height: 1.25em; }
+  
 /*********************************************
  * LINKS
  *********************************************/

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Modern Web Development Training - Sass Architecture</title>
+
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/reveal.css">
+    <link rel="stylesheet" href="/assets/css/theme/black.css">
+    <link rel="stylesheet" href="/assets/css/slides.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="/assets/lib/css/monokai.css">
+
+    <link rel="icon" href="/assets/favicon.ico">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? '/assets/css/print/pdf.css' : '/assets/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal training">
+        <aside style="position: fixed; top: .25rem; left: .25rem; z-index: 1" class="back-to-agenda">
+            <a href="/index.html#agendaDay1"><small>&lt;&nbsp;Back&nbsp;to&nbsp;agenda</small></a>
+        </aside>
+        
+        
+        <div class="slides">
+            <section>
+                <hgroup>
+                    <h1 class="no-text-transform highlight-secondary">Sass best practices</h1>
+                </hgroup>
+            </section>
+
+            <section>
+                <section>
+                    <h2 class="no-text-transform highlight-secondary">Angular: organize styling in a project</h2>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Component approach</h2>
+                    <img src="/assets/img/sass-architecture/component-approach.jpg" alt="component approach" />
+                    <ul>
+                        <li class="small">styling is limited to a component,</li>
+                        <li class="small">the non-component elements (eg. buttons, form elements) are not styled at all,</li>
+                        <li class="small">limiting the use of third-party libraries (e.g. Bootstrap)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Single file approach</h2>
+                    <img src="/assets/img/sass-architecture/single-approach.jpg" alt="single approach" />
+                    <ul>
+                        <li class="small">styling file contains thousands of lines of code,</li>
+                        <li class="small">file is not readable</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Dedicated styling folder</h2>
+                    <img src="/assets/img/sass-architecture/module-system.jpg" alt="module-system" />
+                    <ul>
+                        <li class="small">styling may be component-oriented,</li>
+                        <li class="small">styling may contain rules for non-component elements (eg. buttons and form elements),</li>
+                        <li class="small">you can <code>@import</code> CSS/SASS files from NPM packages (eg. Bootstrap)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">SASS module system + BEM naming convention</h2>
+                    <img src="/assets/img/sass-architecture/module-system.jpg" alt="module-system" />
+                    <img src="/assets/img/sass-architecture/BEM-template.jpg" alt="BEM HTML template" height="250" />
+                    <ul>
+                        <li class="small">styling is object oriented (components + non-component elements),</li>
+                        <li class="small">code is clearly readable,</li>
+                        <li class="small">you can <code>@use</code> SCSS files from NPM packages (eg. Bootstrap),</li>
+                        <li class="small">some SASS benefits,</li>
+                        <li class="small">weird BEM classes</li>
+                    </ul>
+                </section>
+            </section>
+
+            
+            <section>
+                <section>
+                    <h2 class="no-text-transform highlight-secondary">7-1 Sass Architecture</h2>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">
+                        <a href="https://www.learnhowtoprogram.com/user-interfaces/building-layouts-preprocessors/7-1-sass-architecture"
+                        >Read here</a>
+                    </h2>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Why BEM?</h2>
+                    <a href="http://getbem.com/introduction/" target="_blank">
+                        <img src="/assets/img/sass-architecture/why-bem.jpg" alt="why BEM" />
+                    </a>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Modularity</h2>
+                    <ul>
+                        <li>Block styles are never dependent on other elements on a page,</li>
+                        <li>you will never experience problems from cascading,</li>
+                        <li>you get the ability to transfer one project to anoher.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Reusability</h2>
+                    <ul>
+                        <li>CSS code that you will have to maintain.</li>
+                        <li>With a set of style guidelines in place, you can build a library of blocks, making your CSS super effective.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Structure</h2>
+                    <ul>
+                        <li>BEM methodology gives your CSS code a solid structure,</li>
+                        <li>that remains simple and easy to understand.</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2 class="no-text-transform highlight-secondary">BEM classes</h2>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight"><span class="highlight-secondary">BEM</span> stays for<br>
+                        <span class="highlight-secondary"
+                        >B</span>lock__<span class="highlight-secondary"
+                        >E</span>lement--<span class="highlight-secondary"
+                        >M</span>odifier
+                    </h2>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Why BEM?</h2>
+                    <a href="http://getbem.com/introduction/" target="_blank">
+                        <img src="/assets/img/sass-architecture/why-bem.jpg" alt="why BEM" />
+                    </a>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Modularity</h2>
+                    <ul>
+                        <li>Block styles are never dependent on other elements on a page,</li>
+                        <li>you will never experience problems from cascading,</li>
+                        <li>you get the ability to transfer one project to anoher.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Reusability</h2>
+                    <ul>
+                        <li>CSS code that you will have to maintain.</li>
+                        <li>With a set of style guidelines in place, you can build a library of blocks, making your CSS super effective.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Structure</h2>
+                    <ul>
+                        <li>BEM methodology gives your CSS code a solid structure,</li>
+                        <li>that remains simple and easy to understand.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Crazy classes</h2>
+                    <code class="highlight-secondary">search-form__button--disabled</code>
+                    <p>Yes, BEM classes look weird.</p>
+                    <p><a href="https://css-tricks.com/bem-101/"
+                        >But the more CSS you have in a project, the more little things like this add up, the more specificity and complexity battles you go through.</a></p>
+                </section>
+            </section>
+
+
+            <section>
+                <h3 class="no-text-transform highlight-secondary">Let's do the livecoding of this image:</h3>
+                <img src="/assets/img/sass-architecture/live-coding-project.jpg" alt="live-coding-project.jpg" height="550" />
+            </section>
+        </div>
+    </div>
+
+    <script src="/assets/js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            hash: true,
+            dependencies: [
+                { src: '/assets/plugin/markdown/marked.js' },
+                { src: '/assets/plugin/markdown/markdown.js' },
+                { src: '/assets/plugin/notes/notes.js', async: true },
+                { src: '/assets/plugin/highlight/highlight.js', async: true }
+            ]
+        });
+    </script>
+</body>
+
+</html>
+
+7-1 Sass Architecture
