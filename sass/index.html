@@ -34,25 +34,28 @@
         </aside>
         <div class="slides">
             <section>
-                <hgroup>
-                    <h1 class="highlight-secondary">Sass</h1>
-                    <h3 class="no-text-transform highlight">Syntactically Awesome Style Sheets</h3>
-                    <a href="https://sass-lang.com/" target="_blank">https://sass-lang.com/</a>
-                </hgroup>
-            </section>
-            <section>
-                <h2 class="no-text-transform highlight">Sass</h2>
-                <ul>
-                    <li>It is a preprocessor scripting language that is compiled into
-                        <span class="highlight-secondary">C</span>ascading
-                        <span class="highlight-secondary">S</span>tyle
-                        <span class="highlight-secondary">S</span>heets<a
-                            href="https://sass-lang.com/" target="_blank"><small>*</small></a></li>
-                    <li>And it comes with two syntax flavours:
-                        <span class="highlight-secondary">SASS</span>
-                        and
-                        <span class="highlight-secondary">SCSS</span><a href="https://sass-lang.com/guide"
-                            target="_blank"><small>**</small></a></li>
+                <section>
+                    <hgroup>
+                        <h1 class="highlight-secondary">Sass</h1>
+                        <h3 class="no-text-transform highlight">Syntactically Awesome Style Sheets</h3>
+                        <a href="https://sass-lang.com/" target="_blank">https://sass-lang.com/</a>
+                    </hgroup>
+                </section>
+            
+                <section>
+                    <h2 class="no-text-transform highlight">Sass</h2>
+                    <ul>
+                        <li>It is a preprocessor scripting language that is compiled into
+                            <span class="highlight-secondary">C</span>ascading
+                            <span class="highlight-secondary">S</span>tyle
+                            <span class="highlight-secondary">S</span>heets<a
+                                href="https://sass-lang.com/" target="_blank"><small>*</small></a></li>
+                        <li>And it comes with two syntax flavours:
+                            <span class="highlight-secondary">SASS</span>
+                            and
+                            <span class="highlight-secondary">SCSS</span><a href="https://sass-lang.com/guide"
+                                target="_blank"><small>**</small></a></li>
+                    </ul>
                     <table>
                         <tr>
                             <td>
@@ -63,457 +66,233 @@
                             </td>
                         </tr>
                     </table>
-            </section>
-            <section>
-                <h2 class="no-text-transform highlight">Sass setup</h2>
-                <ul>
-                    <li>Step #1 - install Node.js LTS edition <a
-                        href="https://nodejs.org/en/" target="_blank"><small>*</small></a></li>
-                    <li>Step #2 - install Sass CLI</li>
-                   
-                        <code class="code">
-                            &gt;&nbsp;npm install -g sass
-                        </code>
-                 
-                    <li>
-                        Step #3 - let's begin to compile Sass files</li>
-                        <code class="code">&gt;&nbsp;sass src/index.scss dist/index.css</code>
+                </section>
+            
+                <section>
+                    <h2 class="no-text-transform highlight">Sass setup</h2>
+                    <ul>
+                        <li>Step #1 - install Node.js LTS edition <a
+                            href="https://nodejs.org/en/" target="_blank"><small>*</small></a></li>
+                        <li>Step #2 - install Sass CLI</li>
                     
-                </ul>
-                <p><mark>In real world projects we mostly won't take these steps. We'll use a bundler or a JS framework instead.</mark></p>
-            </section>
-            <section>
-                <h2 class="no-text-transform highlight">Nesting</h2>
-                <table>
-                    <tr>
-                        <td>
-                            <img src="/assets/img/nesting01-scss.png">
-                        </td>
-                        <td style="vertical-align: middle;">=></td>
-                        <td>
-                            <img src="/assets/img/nesting01-css.png">
-                        </td>
-                    </tr>
-                </table>
-                <mark>Downside - overqualified selectors</mark><br><code class="code">#main aside nav ul li:hover</code>
-            </section>
-            <section>
-                <h2 class="no-text-transform highlight">Nesting: parent selector</h2>
-                <table>
-                    <tr>
-                        <td>
-                            <img src="/assets/img/nesting02-scss.png">
-                        </td>
-                        <td style="vertical-align: middle;">=></td>
-                        <td>
-                            <img src="/assets/img/nesting02-css.png">
-                        </td>
-                    </tr>
-                </table>
-            </section>
-
-            
-            
-            <!-- Exercise 1: nesting -->
-            <section>
-                <section>
-                    <h2 class="no-text-transform highlight-secondary">Exercise 1: nesting</h2>
-                </section>
-                <section>
-                    <h2 class="no-text-transform highlight small">Build a SCSS tree of nested selectors that compiles to the following css:</h2>
-                    <table style="margin: 0;">
-                        <tr>
-                            <td style="vertical-align: middle; padding-left: 0;">
-                                <code class="small" style="display: inherit; font-size: 0.45em;">
-                                    <span style="color: #FFCC66">ul </span>{<br />
-                                    &nbsp;&nbsp;<span style="color:#84d1fa">background-color:</span> <span style="color: #be6753">white;</span><br />
-                                    }<br /><br />
-                                    <span style="color: #FFCC66">ul li </span>{<br />
-                                    &nbsp;&nbsp;<span style="color:#84d1fa">color:</span> <span style="color: #be6753">green;</span><br />
-                                    }<br /><br />
-                                    <span style="color: #FFCC66">ul li.alert </span>{<br />
-                                    &nbsp;&nbsp;<span style="color:#84d1fa">color:</span> <span style="color: #be6753">red;</span><br />
-                                    }<br /><br />
-                                    <span style="color: #FFCC66">ul li.alert,<br />
-                                    ul li.warning </span>{<br />
-                                    &nbsp;&nbsp;<span style="color:#84d1fa">background-color:</span> <span style="color: #be6753">black;</span><br />
-                                    }<br />
-                                </code>
-                            </td>
-                            <td style="vertical-align: middle; padding-left: 0;">
-                                <code class="small" style="display: inherit; font-size: 0.45em;">
-                                    <span style="color: #FFCC66">ul > li button </span>{<br />
-                                    &nbsp;&nbsp;<span style="color:#84d1fa">color:</span> <span style="color: #be6753">blue;</span><br />
-                                    }<br /><br />
-                                    <span style="color: #FFCC66">ul > li button:hover </span>{<br />
-                                    &nbsp;&nbsp;<span style="color:#84d1fa">color:</span> <span style="color: #be6753">darkblue;</span><br />
-                                    }<br /><br />
-                                    <span style="color: #FFCC66">ul > li button:focus </span>{<br />
-                                    &nbsp;&nbsp;<span style="color:#84d1fa">color:</span> <span style="color: #be6753">lightblue;</span><br />
-                                    }<br /><br />
-                                    <span style="color: #FFCC66">ul + span </span>{<br />
-                                    &nbsp;&nbsp;<span style="color:#84d1fa">color:</span> <span style="color: #be6753">darkblue;</span><br />
-                                    }<br /><br />
-                                    <span style="color: #FFCC66">ul + span:nth-child(odd) </span>{<br />
-                                    &nbsp;&nbsp;<span style="color:#84d1fa">background-color:</span> <span style="color: #be6753">magenta;</span><br />
-                                    }
-                                </code>
-                            </td>
-                            <td style="vertical-align: middle;" class="small">
-                                <p class="small">You can use <a href="https://www.sassmeister.com/" target="_blank">sassmeister.com</a>
-                                <br/>to check the result.<br/><br/>Don't delete your code,<br/>you'll use it in the next exercise.</p>
-                            </td>
-                        </tr>
-                    </table>
+                            <code class="code">
+                                &gt;&nbsp;npm install -g sass
+                            </code>
+                    
+                        <li>Step #3 - let's begin to compile Sass files</li><code class="code">&gt;&nbsp;sass src/index.scss dist/index.css</code>
+                        
+                    </ul>
+                    <p><mark>In real world projects we mostly won't take these steps. We'll use a bundler or a JS framework instead.</mark></p>
                 </section>
             </section>
 
 
-            <!-- Sass variables -->
+            <!-- Nesting -->
             <section>
                 <section>
-                    <h2 class="no-text-transform highlight">Sass variables</h2>
-                    <table>
-                        <tr>
-                            <td>
-                                <img src="/assets/img/variables01-scss.png">
-                            </td>
-                            <td style="vertical-align: middle;">=></td>
-                            <td>
-                                <img src="/assets/img/variables01-css.png">
-                            </td>
-                        </tr>
-                    </table>
-                    <p class="highlight-secondary">They are removed during compilation</p>
-                </section>  
+                    <h2 class="no-text-transform highlight">Nesting</h2>
+                </section>
+                <section>
+                    <h3 class="no-text-transform highlight">Nesting: parent selector</h3>
+                    <div class="align-center justify-center">
+                        <img src="/assets/img/nesting-selector-scss.png">
+                        <p class="mx-30">=></p>
+                        <img src="/assets/img/nesting-selector-css.png">
+                    </div>
+                </section>
+                <section>
+                    <h3 class="no-text-transform highlight">Inheritance: control of selectors</h3>
+                    <div class="align-center justify-center">
+                        <img src="/assets/img/nesting-selector-scss.png">
+                        <p class="mx-30">=></p>
+                        <img src="/assets/img/nesting-selector-css.png">
+                    </div>
+                    <p class="small">
+                        Selectors eg. <code class="code">ul li</code>&nbsp;
+                        <mark class="small">&nbsp;will not be styled </mark>
+                        &nbsp;if out of container <code class="code">aside nav</code>.
+                    </p>
+                </section>
+                <section>
+                    <h3 class="no-text-transform highlight">Nesting rules</h3>
+                    <div class="align-center justify-center">
+                        <img src="/assets/img/nesting-rule-scss.png">
+                        <p class="mx-30">=></p>
+                        <img src="/assets/img/nesting-rule-css.png">
+                    </div>
+                </section>
+            </section>
+
+            
+            <!-- Variables -->
+            <section>
+                <section>
+                    <hgroup>
+                        <h2 class="no-text-transform highlight-secondary">Variables</h2>
+                    </hgroup>
+                </section>
                 <section>
                     <h2 class="no-text-transform highlight">CSS variables</h2>
-                    <table>
-                        <tr>
-                            <td>
-                                <img src="/assets/img/variables02-scss.png">
-                            </td>
-                            <td style="vertical-align: middle;">=></td>
-                            <td>
-                                <img src="/assets/img/variables02-css.png">
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="align-center justify-center">
+                        <img src="/assets/img/variables--scss.png">
+                        <p class="mx-30">=></p>
+                        <img src="/assets/img/variables--css.png">
+                    </div>
                     <p class="highlight-secondary">They still exist during runtime</p>
                 </section>
                 <section>
-                    <h2 class="no-text-transform highlight">Default values</h2>
-                    <table>
-                        <tr>
-                            <td>
-                                <img src="/assets/img/defaultValues01-scss.png">
-                            </td>
-                            <td style="vertical-align: middle;">=></td>
-                            <td>
-                                <img src="/assets/img/defaultValues01-css.png">
-                            </td>
-                        </tr>
-                    </table>
-                </section>
-                <section>
-                    <h2 class="no-text-transform highlight">Variables scope</h2>
-                    <table>
-                        <tr>
-                            <td>
-                                <img src="/assets/img/variablesScope01-scss.png">
-                            </td>
-                            <td style="vertical-align: middle;">=></td>
-                            <td>
-                                <img src="/assets/img/variablesScope01-css.png">
-                            </td>
-                        </tr>
-                    </table>
-                    <mark>The global variable shadowed by the local one</mark>
+                    <h2 class="no-text-transform highlight">Sass variables</h2>
+                    <div class="align-center justify-center">
+                        <img src="/assets/img/variables-scss.png">
+                        <p class="mx-30">=></p>
+                        <img src="/assets/img/variables-css.png">
+                    </div>
+                    <p class="highlight-secondary">They are removed during compilation</p>
                 </section>
             </section>
+
             
-
-
-            <!-- Exercise 2: variables -->
+            <!-- @at-rules -->
             <section>
                 <section>
-                    <h2 class="no-text-transform highlight-secondary">Exercise 2: variables</h2>
+                    <hgroup>
+                        <h2 class="no-text-transform highlight-secondary">At-Rules</h2>
+                    </hgroup>
                 </section>
-            
                 <section>
-                    <h2 class="no-text-transform highlight small">Use the sass code from the previous exercise and use variables to determine the colors.</h2>
-                    <p class="small">Use variables:</p>
-                    <code class="code">--default-css-variables</code><br/>
-                    <code class="code">$specific-for-sass</code><br/>
-                    <code class="code">$shadowed</code>
-                    <p class="small">You can navigate to <a href="https://jsfiddle.net" target="_blank">jsfiddle.net</a> as a playground</p>
+                    <h2 class="no-text-transform highlight">css @at-rules</h2>
+                    <ul>
+                        <li><code class="code">@font-face</code> - to set a custom font,</li>
+                        <li><code class="code">@media</code> - for responsive design,</li>
+                        <li><code class="code">@supports</code> - to add rules only to the browser that supports the condition,</li>
+                        <li><code class="code">@keyframes</code> - to add an animation.</li>
+                    </ul>
                 </section>
+
+                <section>
+                    <h2 class="no-text-transform highlight">SASS: @extend</h2>
+                    <div class="align-center justify-center">
+                        <img src="/assets/img/at-extend-scss.png">
+                        <p class="mx-30">=></p>
+                        <img src="/assets/img/at-extend-css.png">
+                    </div>
+                    <p>Extends allow you to re-use styles of a selector<br/>(or <code class="code">%pseudoselector</code>) throughout your stylesheet.</p>
+                </section>
+                
+                <section>
+                    <h2 class="no-text-transform highlight">SASS: @mixin</h2>
+                    <div class="align-center justify-center">
+                        <img src="/assets/img/at-mixins01-scss.png">
+                        <p class="mx-30">=></p>
+                        <img src="/assets/img/at-mixins01-css.png">
+                    </div>
+                    <p>Mixins allow you to define styles that can be re-used throughout your stylesheet.</p>
+                </section>
+
+                <section>
+                    <h2 class="no-text-transform highlight">SASS: @function</h2>
+                    <div class="align-center justify-center">
+                        <img src="/assets/img/at-functions-scss.png">
+                        <p class="mx-30">=></p>
+                        <img src="/assets/img/at-functions-css.png">
+                    </div>
+                    <p>Function returns a value.</p>
+                </section>
+
+                <section>
+                    <h3 class="no-text-transform highlight-secondary">SASS more at-rules - <a href="https://sass-lang.com/documentation/at-rules">read here</a></h3>
+                </section>
+                
+                
             </section>
         
-            <section>
-                <section>
-                <h2 class="no-text-transform highlight">Value types</h2>
-                <ul>
-                    <li>
-                        Numbers
-                    </li>
-                    <li>
-                        Strings
-                    </li>
-                    <li>
-                        Colors
-                    </li>
-                    <li>
-                        Lists/Maps
-                    </li>
-                    <li>
-                        Booleans
-                    </li>
-                    <li>
-                        null
-                    </li>
-                    <li>
-                        Function references
-                    </li>
-                </ul>
-                </section>
-                <section>
-                    <h2 class="no-text-transform highlight">Numbers</h2>
-                    <ul>
-                        <li>
-                            May or may not have units, like 12 or 100px
-                        </li>
-                    </ul>
-                    <img src="/assets/img/valuesAndUnits-scss.png" width="300px">
-                </section>
-                <section>
-                    <h2 class="no-text-transform highlight">Strings</h2>
-                    <ul>
-                        <li>
-                            may or may not have quotes, like <code class="code"> "Helvetica Neue"</code> or<code class="code"> bold</code>.
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h2 class="no-text-transform highlight">Colors</h2>
-                    <ul>
-                        <li>
-                            can be referred to by their hex representation or by name, like <code class="code">#c6538c</code> or <code class="code">blue</code>, or returned from functions, like <code class="code">rgb(107, 113, 127)</code> or <br><code class="code">hsl(210, 100%, 20%)</code>
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h2 class="no-text-transform highlight">Lists/maps</h2>
-                    <ul>
-                        <li>
-                            Lists and maps allow you to use sass functions in a sophisticated way.
-                        </li>
-                    </ul>
-                </section>
-            </section>
 
-            
-            <!-- Mixins -->
-            <section>
-                <h2 class="no-text-transform highlight">Mixins</h2>
-                <table>
-                    <tr>
-                        <td>
-                            <img src="/assets/img/mixins01-scss.png">
-                        </td>
-                        <td style="vertical-align: middle;">=></td>
-                        <td>
-                            <img src="/assets/img/mixins01-css.png">
-                        </td>
-                    </tr>
-                </table>
-            </section>
-
-
-            
-            <!-- Inheritance -->
-            <section>
-                <h2 class="no-text-transform highlight">Inheritance</h2>
-                <table>
-                    <tr>
-                        <td>
-                            <img src="/assets/img/inheritance01-scss.png">
-                        </td>
-                        <td style="vertical-align: middle;">=></td>
-                        <td>
-                            <img src="/assets/img/inheritance01-css.png">
-                        </td>
-                    </tr>
-                </table>
-                <p>If a class is marked as a placeholder with <code class="code">%</code> sign, it will be rendered if extended only</p>
-            </section>
-            <section style="text-align: left;">
-                <h2 class="no-text-transform highlight-secondary">Exercise 3: mixins</h2>
-                <h2 class="no-text-transform highlight-secondary">Exercise 4: inheritance</h2>
-            </section>
-            <section>
-                <h2 class="no-text-transform highlight">Module pattern</h2>
-                <ul>
-                    <li>
-                        It's reasonable to extract common codebase into separate partial files. E.g. <code class="code">_variables.scss, _mixins.scss, _classes.scss</code>
-                    </li>
-                    <li>
-                        Import them with <code class="code">@use</code> at-rule, <br>
-                        e. g. <code class="code">@use './common/variables' as var</code>
-                    </li>
-                    <li>
-                        <code class="code">@import</code> at-rule is also allowed, although it is obsolete and highly discouraged.
-                    </li>
-                </ul>
-            </section>
-            <section>
-                <h2 class="no-text-transform highlight-secondary">Exercise 5: modules</h2>
-            </section>
-            <section >
-                <h2 class="no-text-transform highlight">Built-in modules</h2>
-                            <ul top="0px;">
-                                <li>
-                                   <code class="code"> @debug @warn @error</code>
-                                </li>
-                                <li>
-                                    sass:color
-                                </li>
-                                <li>
-                                    sass:list
-                                </li>
-                                <li>
-                                    sass:map
-                                </li>
-                                <li>
-                                    sass:math
-                                </li>
-                                <li>
-                                    sass:meta
-                                </li>
-                                <li>
-                                    sass:selector
-                                </li>
-                                <li>
-                                    sass:string
-                                </li>
-                            </ul>
-            </section>
-            <section>
-                <h2 class="no-text-transform highlight">Built-in values</h2>
-                <table>
-                    <tr>
-                        <td>
-                            <img src="/assets/img/builtInValues01-scss.png">
-                        </td>
-                        <td>
-                            <img src="/assets/img/builtInValues01-css.png">
-                        </td>
-                    </tr>
-                </table>
-                <mark>Built-in values cannot be overwritten</mark>
-            </section>
-            <section >
-                <h2 class="no-text-transform highlight">Functions and flow control</h2>
-            <img src="/assets/img/functions01-scss.png">
-            </section>
-            <section>
-                <h1 class="no-text-transform highlight-secondary">Demo: Flow control</h1>
-            </section>
-
-
-
-  
+            <!-- Sass best practices -->
             <section>
                 <hgroup>
-                    <h1 class="no-text-transform highlight-secondary">Sass best practices</h1>
+                    <h2 class="no-text-transform highlight-secondary">Sass best practices</h2>
                 </hgroup>
             </section>
 
+            <!-- Organize styling in a project -->
             <section>
                 <section>
-                    <h2 class="no-text-transform highlight-secondary">Angular: organize styling in a project</h2>
+                    <h2 class="no-text-transform highlight-secondary">Organize styling in a project</h2>
                 </section>
                 <section>
-                    <h2 class="no-text-transform highlight">Component approach</h2>
+                    <h3 class="no-text-transform highlight">Component approach <br/>(img on the example of Angular project)</h3>
                     <img src="/assets/img/sass-architecture/component-approach.jpg" alt="component approach" />
-                    <ul>
-                        <li class="small">styling is limited to a component,</li>
-                        <li class="small">the non-component elements (eg. buttons, form elements) are not styled at all,</li>
-                        <li class="small">limiting the use of third-party libraries (e.g. Bootstrap)</li>
+                    <ul class="small block">
+                        <li class="small">the styling is limited to the component,</li>
+                        <li class="small">non-component elements (e.g. buttons, form elements) are not styled at all,</li>
+                        <li class="small">the use and styling of third party libraries (eg Bootstrap) is restricted.</li>
                     </ul>
                 </section>
                 <section>
-                    <h2 class="no-text-transform highlight">Single file approach</h2>
+                    <h3 class="no-text-transform highlight">Single file approach</h3>
                     <img src="/assets/img/sass-architecture/single-approach.jpg" alt="single approach" />
-                    <ul>
-                        <li class="small">styling file contains thousands of lines of code,</li>
-                        <li class="small">file is not readable</li>
+                    <ul class="small block">
+                        <li class="small">usually it's a file named styles.scss or main.scss,</li>
+                        <li class="small">the file contains thousands of lines of code,</li>
+                        <li class="small">and it is hardly readable.</li>
                     </ul>
                 </section>
                 <section>
-                    <h2 class="no-text-transform highlight">Dedicated styling folder</h2>
-                    <img src="/assets/img/sass-architecture/module-system.jpg" alt="module-system" />
-                    <ul>
-                        <li class="small">styling may be component-oriented,</li>
-                        <li class="small">styling may contain rules for non-component elements (eg. buttons and form elements),</li>
-                        <li class="small">you can <code>@import</code> CSS/SASS files from NPM packages (eg. Bootstrap)</li>
+                    <h3 class="no-text-transform highlight">Mixed approach of both previous ones</h3>
+                    <div class="align-center justify-center">
+                        <img src="/assets/img/sass-architecture/component-approach.jpg" alt="component approach" />
+                        &nbsp;&nbsp; + &nbsp;&nbsp;
+                        <img src="/assets/img/sass-architecture/single-approach.jpg" alt="single approach" />
+                    </div>
+                    <ul class="small block">
+                        <li class="small">much more clear structure,</li>
+                        <li class="small">...but not consistent ;)</li>
                     </ul>
                 </section>
                 <section>
-                    <h2 class="no-text-transform highlight">SASS module system + BEM naming convention</h2>
-                    <img src="/assets/img/sass-architecture/module-system.jpg" alt="module-system" />
-                    <img src="/assets/img/sass-architecture/BEM-template.jpg" alt="BEM HTML template" height="250" />
-                    <ul>
-                        <li class="small">styling is object oriented (components + non-component elements),</li>
-                        <li class="small">code is clearly readable,</li>
-                        <li class="small">you can <code>@use</code> SCSS files from NPM packages (eg. Bootstrap),</li>
-                        <li class="small">some SASS benefits,</li>
-                        <li class="small">weird BEM classes</li>
+                    <h3 class="no-text-transform highlight">Dedicated styling folder</h3>
+                    <img src="/assets/img/sass-architecture/bem-7-1.png" alt="7-1" />
+                    <ul class="small block">
+                        <li class="small">styling can be component-oriented,</li>
+                        <li class="small">the styling may contain rules for non-component elements (eg. buttons and form elements),</li>
+                        <li class="small">you can <code class="code">@import</code> and <code class="code">@use</code> CSS/SASS files from NPM packages (eg. Bootstrap)</li>
+                        <li class="small">to sum up: this is probably the best way to organize your styling,</li>
+                        <li class="small">and surely it is recommended by SASS developers.</li>
                     </ul>
                 </section>
             </section>
 
-            
+            <!-- 7.1 -->
             <section>
                 <section>
                     <h2 class="no-text-transform highlight-secondary">7-1 Sass Architecture</h2>
                 </section>
+
                 <section>
-                    <h2 class="no-text-transform highlight">
-                        <a href="https://www.learnhowtoprogram.com/user-interfaces/building-layouts-preprocessors/7-1-sass-architecture" target="_blank"
-                        >Read here</a>
-                    </h2>
+                    <q class="small"><a href="https://sass-guidelin.es/#architecture" target="_blank">
+                        Architecting a CSS project is probably one of the most difficult things you will have to do in a project’s life. Keeping the architecture consistent and meaningful is even harder.
+                    </a></q>&nbsp;<br/>&nbsp;
+                    <p>Sass architecture is very opinionated.</p>
+                    <p>Obviously, 7-1 Pattern is certainly not the only way of doing things, and it may or may not suit your project.</p>
                 </section>
+
                 <section>
-                    <h2 class="no-text-transform highlight">Why BEM?</h2>
-                    <a href="http://getbem.com/introduction/" target="_blank">
-                        <img src="/assets/img/sass-architecture/why-bem.jpg" alt="why BEM" />
-                    </a>
-                </section>
-                <section>
-                    <h2 class="no-text-transform highlight">Modularity</h2>
-                    <ul>
-                        <li>Block styles are never dependent on other elements on a page,</li>
-                        <li>you will never experience problems from cascading,</li>
-                        <li>you get the ability to transfer one project to anoher.</li>
-                    </ul>
-                </section>
-                <section>
-                    <h2 class="no-text-transform highlight">Reusability</h2>
-                    <ul>
-                        <li>CSS code that you will have to maintain.</li>
-                        <li>With a set of style guidelines in place, you can build a library of blocks, making your CSS super effective.</li>
-                    </ul>
-                </section>
-                <section>
-                    <h2 class="no-text-transform highlight">Structure</h2>
-                    <ul>
-                        <li>BEM methodology gives your CSS code a solid structure,</li>
-                        <li>that remains simple and easy to understand.</li>
-                    </ul>
+                    <div class="align-center">
+                        <img src="../assets/img/sass-pattern-7-1.png" alt="SASS 7-1" height="600"/>
+                        <ul class="small block">
+                            <p>7-1 Pattern: popular and effectively modular way to structure Sass projects:</p>
+                            
+                            <li class="small"><span class="highlight-secondary">Seven directories</span> and <span class="highlight-secondary">one file</span> that uses them all,</li>
+                            <li class="small">The main style file contains <code class="code">@import</code>s or <code class="code">@use</code>s of separate files,</li>
+                            <li class="small">each file in the component catalog can only contain inherited selectors,</li>
+                            <li class="small">there are several boilerplate in GitHub - <a href="https://github.com/KittyGiraudel/sass-boilerplate" target="_blank">this is the most popular one</a>,</li>
+                            <li class="small">a great explanation of each directory can be found <a href="https://sass-guidelin.es/#the-7-1-pattern" target="_blank">here</a>.</li>
+                        </ul>
+                    </div>
                 </section>
             </section>
 
+            <!-- BEM -->
             <section>
                 <section>
                     <h2 class="no-text-transform highlight-secondary">BEM classes</h2>
@@ -563,7 +342,79 @@
                 </section>
             </section>
 
+            <!-- 7-1 pattern + BEM -->
+            <section>
+                <section>
+                    <h2 class="no-text-transform highlight-secondary">7-1 Pattern<br/> + <br/>BEM naming convention</h2>
+                </section>
+                <section>
+                    <div class="align-center justify-center">
+                        <img src="/assets/img/sass-architecture/bem-7-1.png" alt="7-1" />
+                        &nbsp;&nbsp; + &nbsp;&nbsp;
+                        <img src="/assets/img/sass-architecture/BEM-template.jpg" alt="BEM HTML template" height="250" />
+                    </div>
+                    <ul>
+                        <li class="small">styling is object oriented (components + non-component elements),</li>
+                        <li class="small">code is clearly readable,</li>
+                        <li class="small">you can <code class="code">@use</code> SCSS files from NPM packages (eg. Bootstrap),</li>
+                        <li class="small">some SASS benefits,</li>
+                        <li class="small">weird BEM classes</li>
+                    </ul>
+                </section>
+            </section>
 
+            <!-- module system -->
+            <section>
+                <section>
+                    <h2 class="no-text-transform highlight-secondary">SASS module system</h2>
+                </section>
+                <section>
+                    <p><span class="highlight">October 2019:</span> The Module System is Launched</p>
+                    <a href="https://sass-lang.com/blog/the-module-system-is-launched" target="_blank">
+                        <img src="../assets/img/sass-architecture/module-system.png" alt="">
+                    </a>
+                    <p class="small">News in styling are not common :)</p>
+                </section>
+                
+                <section>
+                    <h3 class="no-text-transform highlight">Main feature: <code class="code">@use</code> namespace system</h3>
+                    <ul>
+                        <li class="small">The reason for introducing the new system was mainly due to importing many third party libraries in the project,</li>
+                        <li class="small">→ many imported modules brought many variables,</li>
+                        <li class="small">→ it happened, that variables had the same name - which caused conflicts.</li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h2 class="no-text-transform highlight">Built-in modules</h2>
+                    <ul top="0px;">
+                        <li><code class="code"> @debug @warn @error</code></li>
+                        <li>sass:color</li>
+                        <li>sass:list</li>
+                        <li>sass:map</li>
+                        <li>sass:math</li>
+                        <li>sass:meta</li>
+                        <li>sass:selector</li>
+                        <li>sass:string</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 class="no-text-transform highlight">Built-in values</h2>
+                    <div class="align-center justify-center">
+                        <img src="/assets/img/builtInValues01-scss.png">
+                        &nbsp;&nbsp; => &nbsp;&nbsp;
+                        <img src="/assets/img/builtInValues01-css.png">
+                    </div>
+                    <p>Built-in values cannot be overwritten</p>
+                </section>
+            </section>
+
+            
+
+
+
+            <!-- live-coding-project -->
             <section>
                 <h3 class="no-text-transform highlight-secondary">Let's do the livecoding of this image:</h3>
                 <img src="/assets/img/sass-architecture/live-coding-project.jpg" alt="live-coding-project.jpg" height="550" />
@@ -592,3 +443,5 @@
 </body>
 
 </html>
+
+

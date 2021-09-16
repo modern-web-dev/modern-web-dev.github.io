@@ -27,3 +27,25 @@
 .reveal.training .highlight-secondary {
     color: #f92672;
 }
+
+.block {
+    display: block !important;
+}
+
+.flex {
+    display: flex !important;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.mx-30 {
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+}
