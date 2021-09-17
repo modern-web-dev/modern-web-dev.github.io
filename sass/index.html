@@ -111,32 +111,36 @@
                     </tr>
                 </table>
             </section>
+
+            
+            
+            <!-- Exercise 1: nesting -->
             <section>
                 <section>
-                    <h1 class="no-text-transform highlight-secondary">Exercise 1: nesting</h1>
+                    <h2 class="no-text-transform highlight-secondary">Exercise 1: nesting</h2>
                 </section>
                 <section>
                     <h2 class="no-text-transform highlight small">Build a SCSS tree of nested selectors that compiles to the following css:</h2>
                     <table style="margin: 0;">
                         <tr>
-                            <td style="vertical-align: middle;">
+                            <td style="vertical-align: middle; padding-left: 0;">
                                 <code class="small" style="display: inherit; font-size: 0.45em;">
                                     <span style="color: #FFCC66">ul </span>{<br />
                                     &nbsp;&nbsp;<span style="color:#84d1fa">background-color:</span> <span style="color: #be6753">white;</span><br />
                                     }<br /><br />
-                                    <span style="color: #FFCC66">ul > li </span>{<br />
+                                    <span style="color: #FFCC66">ul li </span>{<br />
                                     &nbsp;&nbsp;<span style="color:#84d1fa">color:</span> <span style="color: #be6753">green;</span><br />
                                     }<br /><br />
-                                    <span style="color: #FFCC66">ul > li.alert </span>{<br />
+                                    <span style="color: #FFCC66">ul li.alert </span>{<br />
                                     &nbsp;&nbsp;<span style="color:#84d1fa">color:</span> <span style="color: #be6753">red;</span><br />
                                     }<br /><br />
-                                    <span style="color: #FFCC66">ul > li.alert,<br />
-                                    ul > li.warning </span>{<br />
+                                    <span style="color: #FFCC66">ul li.alert,<br />
+                                    ul li.warning </span>{<br />
                                     &nbsp;&nbsp;<span style="color:#84d1fa">background-color:</span> <span style="color: #be6753">black;</span><br />
                                     }<br />
                                 </code>
                             </td>
-                            <td style="vertical-align: middle;">
+                            <td style="vertical-align: middle; padding-left: 0;">
                                 <code class="small" style="display: inherit; font-size: 0.45em;">
                                     <span style="color: #FFCC66">ul > li button </span>{<br />
                                     &nbsp;&nbsp;<span style="color:#84d1fa">color:</span> <span style="color: #be6753">blue;</span><br />
@@ -155,7 +159,10 @@
                                     }
                                 </code>
                             </td>
-                            <td style="vertical-align: middle;" class="small">You can use <a href="https://www.sassmeister.com/" target="_blank">this tool</a><br/>to check the result</td>
+                            <td style="vertical-align: middle;" class="small">
+                                <p class="small">You can use <a href="https://www.sassmeister.com/" target="_blank">sassmeister.com</a>
+                                <br/>to check the result.<br/><br/>Don't delete your code,<br/>you'll use it in the next exercise.</p>
+                            </td>
                         </tr>
                     </table>
                 </section>
@@ -224,6 +231,25 @@
                     <mark>The global variable shadowed by the local one</mark>
                 </section>
             </section>
+            
+
+
+            <!-- Exercise 2: variables -->
+            <section>
+                <section>
+                    <h2 class="no-text-transform highlight-secondary">Exercise 2: variables</h2>
+                </section>
+            
+                <section>
+                    <h2 class="no-text-transform highlight small">Use the sass code from the previous exercise and use variables to determine the colors.</h2>
+                    <p class="small">Use variables:</p>
+                    <code class="code">--default-css-variables</code><br/>
+                    <code class="code">$specific-for-sass</code><br/>
+                    <code class="code">$shadowed</code>
+                    <p class="small">You can navigate to <a href="https://jsfiddle.net" target="_blank">jsfiddle.net</a> as a playground</p>
+                </section>
+            </section>
+        
             <section>
                 <section>
                 <h2 class="no-text-transform highlight">Value types</h2>
@@ -238,10 +264,7 @@
                         Colors
                     </li>
                     <li>
-                        Lists
-                    </li>
-                    <li>
-                        Maps
+                        Lists/Maps
                     </li>
                     <li>
                         Booleans
@@ -259,9 +282,6 @@
                     <ul>
                         <li>
                             May or may not have units, like 12 or 100px
-                        </li>
-                        <li>
-                            You can use <code class="code">calc</code> function to calculate numbers
                         </li>
                     </ul>
                     <img src="/assets/img/valuesAndUnits-scss.png" width="300px">
@@ -283,21 +303,17 @@
                     </ul>
                 </section>
                 <section>
-                    <h2 class="no-text-transform highlight">Lists</h2>
+                    <h2 class="no-text-transform highlight">Lists/maps</h2>
                     <ul>
                         <li>
-                            may be separated by spaces or commas and which may be enclosed in square brackets or no brackets at all, like<br><code class="code"> 1.5em 1em 0 2em, Helvetica, Arial, sans-serif</code> <br>or <br> <code class="code">[col1-start]</code>
+                            Lists and maps allow you to use sass functions in a sophisticated way.
                         </li>
                     </ul>
                 </section>
-                <section>
-                    <h2 class="no-text-transform highlight">Maps</h2>
-                    <img src="/assets/img/maps-scss.png">
-                </section>
             </section>
-            <section>
-                <h1 class="no-text-transform highlight-secondary">Exercise 2: variables</h1>
-            </section>
+
+            
+            <!-- Mixins -->
             <section>
                 <h2 class="no-text-transform highlight">Mixins</h2>
                 <table>
@@ -305,12 +321,17 @@
                         <td>
                             <img src="/assets/img/mixins01-scss.png">
                         </td>
+                        <td style="vertical-align: middle;">=></td>
                         <td>
                             <img src="/assets/img/mixins01-css.png">
                         </td>
                     </tr>
                 </table>
             </section>
+
+
+            
+            <!-- Inheritance -->
             <section>
                 <h2 class="no-text-transform highlight">Inheritance</h2>
                 <table>
@@ -318,6 +339,7 @@
                         <td>
                             <img src="/assets/img/inheritance01-scss.png">
                         </td>
+                        <td style="vertical-align: middle;">=></td>
                         <td>
                             <img src="/assets/img/inheritance01-css.png">
                         </td>
@@ -345,7 +367,7 @@
                 </ul>
             </section>
             <section>
-                <h1 class="no-text-transform highlight-secondary">Exercise 5: modules</h1>
+                <h2 class="no-text-transform highlight-secondary">Exercise 5: modules</h2>
             </section>
             <section >
                 <h2 class="no-text-transform highlight">Built-in modules</h2>
