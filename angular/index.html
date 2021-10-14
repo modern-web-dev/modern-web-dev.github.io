@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Angular training</title>
+
+		<link rel="stylesheet" href="../assets/css/reset.css">
+		<link rel="stylesheet" href="../assets/css/reveal.css">
+		<link rel="stylesheet" href="../assets/css/theme/black.css">
+		<link rel="stylesheet" href="../assets/css/slides.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../assets/lib/css/monokai.css">
+
+		<link rel="icon" href="../assets/favicon.ico">
+
+	</head>
+	<body>
+		<div class="reveal training">
+
+			<div class="slides">
+				<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+					<script type="text/template">
+						# Angular training
+
+						---
+
+						## Agenda
+
+						### Day 1
+
+						* Introduction
+						* Development environment
+						* What is SPA?
+						* Basic anatomy of NG application
+						* Build your first NG app from scratch
+						* Introduction to TypeScript/JavaScript
+
+						--
+
+						### Day 2
+
+						* Testing
+						* Reactive programming
+						* Asynchronous tests
+						* Angular change detection
+
+						--
+
+						### Day 3
+
+						* The router
+						* Services
+						* Reactive forms
+						* Styling and SCSS
+						* Bootstrap
+
+						--
+
+						### Day 4
+
+						* Router and advanced navigations
+						* Query parameters
+						* State
+						* HttpClient
+						* Advanced examples
+
+					</script>
+				</section>
+			</div>
+		</div>
+
+		<script src="../assets/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				slideNumber: "c/t",
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../assets/plugin/markdown/marked.js' },
+                    { src: '../assets/plugin/markdown/markdown.js' },
+                    { src: '../assets/plugin/highlight/highlight.js', async: true },
+					{ src: '../assets/plugin/notes/notes.js' }
+				]
+			});
+		</script>
+	</body>
+</html>
