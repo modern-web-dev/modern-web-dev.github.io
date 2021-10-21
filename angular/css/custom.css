@@ -4,3 +4,7 @@
 .pink {
     color: #ff00ff;
 }
+.reveal.training img {
+    border: 0;
+    background: none;
+}
