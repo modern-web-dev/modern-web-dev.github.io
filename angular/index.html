@@ -8,8 +8,9 @@
 
 		<link rel="stylesheet" href="../assets/css/reset.css">
 		<link rel="stylesheet" href="../assets/css/reveal.css">
-		<link rel="stylesheet" href="../assets/css/theme/black.css">
+		<link rel="stylesheet" href="../assets/css/theme/night.css">
 		<link rel="stylesheet" href="../assets/css/slides.css">
+		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="../assets/lib/css/monokai.css">
@@ -34,14 +35,14 @@
 						* Introduction
 						* Development environment
 						* What is SPA?
-						* Basic anatomy of NG application
+						* Anatomy of NG application
 						* Build your first NG app from scratch
-						* Introduction to TypeScript/JavaScript
 
 						--
 
 						### Day 2
 
+						* Introduction to TypeScript/JavaScript
 						* Testing
 						* Reactive programming
 						* Asynchronous tests
@@ -67,6 +68,184 @@
 						* HttpClient
 						* Advanced examples
 
+						---
+
+						### Plan of the day
+
+						<!-- .slide: class="cyan"-->
+
+						* 9:00 - 9:55 (then 5 mins of coffe break)
+						* 10:00 - 10:55 (then another 5 mins of coffe break)
+						* 11:00 - 12:00 (lunch break 30 mins)
+						* 12:30 - 13:15 (5 mins of break)
+						* 13:20 - 14:15 (5 mins of break)
+						* 14:20 - 15:10 (10 mins of break)
+						* 15:20 - 16:00
+
+						---
+
+						# Day 1
+
+						---
+
+						## Development environment
+
+						--
+
+						### Angular CLI
+
+						![Angular CLI](img/angular-cli.png)
+
+						--
+
+						### Installation
+
+						* Install `nvm` (Node Version Manager).
+						* Install latest LTS version of NodeJS.
+						* Install Angular CLI *globally* with `npm`.
+						* Use IDE of choice: IntelliJ Ultimate, WebStorm, Visual Studio Code.<!-- .element: class="fragment pink"-->
+
+						You are ready!<!-- .element: class="fragment cyan"-->
+
+						---
+
+						# What is SPA?
+
+						--
+
+						### Old style web app
+
+						![Old style web app](img/web-app-old-style.png)
+
+						--
+
+						### New style web app
+
+						![New style web app](img/web-app-new-style.png)
+
+						--
+
+						### Why new is better?
+
+						![Why new is better](img/why-new-is-better.png)
+
+						---
+
+						# Anatomy of Angular application
+
+						--
+
+						### Main building blocks
+
+						![Anatomy of NG](img/angular-architecture.png)
+
+						---
+
+						# Day 2
+
+						---
+
+						### Introduction to JavaScript
+
+						Netscape Communications<!-- .element: class="pink"-->
+
+						> To defend the idea of JavaScript against competing proposals, the company needed a prototype. Eich wrote one in 10 days, in May 1995.
+
+						--
+
+						![Crockford](img/js-good-vs-definitive.jpg)
+
+						Read: Douglas Crockford *JavaScript: The Good Parts*<!-- .element: class="cyan"-->
+
+						--
+
+						## JavaScript
+
+						<!-- .slide: class="cyan"-->
+
+						* Object oriented
+						* Functional
+						* Dynamically typed
+						* Single threaded
+						* It has nothing to do with Java!<!-- .element: class="fragment pink"-->
+
+						--
+
+						JavaScript is single threaded and reactive<!-- .element: class="cyan"-->
+
+						![JavaScript execution model](img/javascript-execution-model.png)
+
+						--
+
+						### Important to know!
+
+						* There is no function/method/constructor overloading mechanism.
+						* Use fat arrow notation (`()=>{}`) for functions where possible.
+						* Always declare variables with `let` or `const`.
+						* Always use `===` and `!==` operators for comparisons.
+
+						--
+
+						### JavaScript has types!
+
+						* `number` - floating point only
+						* `boolean`
+						* `string`
+						* `function`
+						* `object`, that is, `{ ... }`, arrays are objects too
+
+						--
+
+						JavaScript has a powerful object creation literal
+
+						```javascript
+						const book = {
+							id: 1234,
+							title: 'JavaScript: The Good Parts',
+							author: 'Crockford Douglas'
+						};
+						```
+
+						---
+
+						### Why do we need a TypeScript
+
+						JavaScript features considered as flaws:<!-- .element: class="pink"-->
+
+						* No static typing.
+						* Object values cannot be distinguished except by examining their properties.
+						* No visibility modifiers in object/classes.
+
+						--
+
+						![TS compiling](img/ts-processing.png)
+
+						TypeScript must be compiled to the JavaScript before it can be run on a browser.
+
+						---
+
+						### NG component lifecycle
+
+						![NG lifecycle](img/ng-lifecycle-hooks.png)
+
+						*there are more lifecycle hooks there<!-- .element: class="cyan"-->
+
+						--
+
+						### NG change detection
+
+						![NG change detection](img/ng-change-detection.png)
+
+						---
+
+						# Day 3
+
+						--
+
+						### Reactive forms
+
+						![Reactive forms](img/reactive-forms.png)
+
 					</script>
 				</section>
 			</div>
@@ -81,6 +260,7 @@
 			Reveal.initialize({
 				hash: true,
 				slideNumber: "c/t",
+				fragmentInURL: true,
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
 					{ src: '../assets/plugin/markdown/marked.js' },
