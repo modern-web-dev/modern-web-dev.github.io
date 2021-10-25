@@ -67,7 +67,7 @@
 						* Add bootstrap to the app: `@import "~bootstrap/scss/bootstrap".
 						* Style the page with bootstrap: `mb-3`, `form-label`, `form-control`, `btn btn-primary btn-light`.
 
-						---
+						--
 
 						### Master details
 
@@ -77,7 +77,7 @@
 						* Embed list of books into book-list component.
 						* Render the list.
 
-						---
+						--
 
 						### Wire the components
 
@@ -88,7 +88,7 @@
 						* Demonstrate change detection.
 						* Make shallow copy on select.
 
-						---
+						--
 
 						### Implement Save and Revert
 
@@ -103,9 +103,35 @@
 						### Day 2
 
 						* Testing
-						* Reactive programming
 						* Asynchronous tests
 						* Angular change detection
+						* Reactive forms
+
+						--
+
+						#### [class] tests
+
+						* Delete everything from `book-details.component.spec.ts`
+						* Let's start with [class] tests
+						* Implement 'allows to set a book'
+						* Makes copy of a original book.
+						* Implement revert test
+						* Implement save test
+
+						--
+						#### [DOM] tests
+
+						* fixture
+						* native element
+						* before each async / await compile component
+						* before each prepare fixture, component, native element
+						* for no book we see appropriate message (done)
+						* once book is selected, we see a form (fakeAsync)
+
+						--
+
+						* once book is edited, its value is propagated to the model
+						* fake async
 
 						---
 
@@ -113,7 +139,7 @@
 
 						* The router
 						* Services
-						* Reactive forms
+						* Reactive programming
 						* Styling and SCSS
 						* Bootstrap
 
