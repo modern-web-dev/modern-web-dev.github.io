@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Web Client Crash Course</title>
+
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/theme/black.css">
+    <link rel="stylesheet" href="../assets/css/slides.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../assets/lib/css/monokai.css">
+
+    <link rel="icon" href="../assets/favicon.ico">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+</head>
+<body>
+<div class="reveal training">
+    <aside style="position: fixed; top: .25rem; left: .25rem; z-index: 1" class="back-to-agenda">
+        <a href="../index.html#agendaDay1"><small>&lt;&nbsp;Back&nbsp;to&nbsp;agenda</small></a>
+    </aside>
+    <div class="slides">
+        <section>
+            <h2 class="no-text-transform highlight-secondary">JavaScript...</h2>
+            <p>...has nothing in common with Java&nbsp;<small>* except for some key words</small></p>
+            <p>...is more like <q>Lisp in C's clothing</q>&nbsp;<small>*Douglas Crockford</small></p>
+            <p>...has objects, but <span style="text-decoration: line-through">is class-free</span></p>
+            <p>...is of <mark>single-threaded</mark> nature</p>
+            <p>...has <mark>asynchronous</mark> programming model</p>
+            <p>...is <mark>object oriented</mark> and <mark>functional</mark> at the same time</p>
+        </section>
+        <section>
+            <p style="text-align: left"><code class="code">let</code> declares a <mark>variable</mark>:</p>
+            <pre><code data-trim class="javascript">
+let foo = 123;
+if (true) { // a block starts here
+    let foo = 456;
+} // the block ends here
+console.log(foo); // 123
+                    </code></pre>
+            <p style="text-align: left">while <code class="code">const</code> a <mark>constant</mark> which <mark>cannot be reassigned</mark>:</p>
+            <pre><code class="javascript">const foo = 123;
+foo = 456; // TypeError
+					</code></pre>
+            <p style="text-align: left">Both variables and constants are declared in the <mark>block scope</mark></p>
+        </section>
+        <section>
+            <h2 class="no-text-transform">Objects</h2>
+            <p>can be created using <mark>object literals</mark>:</p>
+            <pre><code data-trim class="javascript">
+const emptyObject = {};
+
+const person = {
+  firstName : 'John',
+  lastName : 'Example',
+  age : 30
+};
+					</code></pre>
+        </section>
+        <section>
+            <h2 class="no-text-transform">Objects</h2>
+            <p>can be created using <mark>classes</mark>:</p>
+            <pre><code data-trim class="javascript">
+class Person {
+  constructor(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
+}
+
+const person = new Person('John', 'Example', 35);
+					</code></pre>
+        </section>
+        <section>
+            <p style="margin-bottom: 0">Object property values' <mark>retrieval</mark> and <mark>update</mark></p>
+            <p style="margin-top: 0">Object properties' <mark>removal</mark></p>
+            <pre><code data-trim class="javascript">
+const person = {firstName: 'John', lastName: 'Example', age: 30};
+
+// retrieval
+person.firstName // 'John'
+person['lastName'] // 'Example'
+person.salutation // undefined
+salutation = person.salutation || ''; // the default operator
+person.address.street // throws TypeError
+street = person.address &amp;&amp; person.address.street // undefined
+// update
+person['firstName'] = 'Joe';
+person.age = 33;
+// delete property
+delete person.age;
+					</code></pre>
+        </section>
+        <section>
+            <h2 class="no-text-transform">Functions</h2>
+            <ul>
+                <li>are <mark>objects</mark></li>
+                <li>can be created using <mark>function declaration</mark>:</li>
+            </ul>
+            <pre><code data-trim class="javascript">
+function add(a, b) { // function declaration
+    return a + b;
+};
+
+add(1, 2); // 3
+                    </code></pre>
+            <p>Functions introduce the <mark>function scope</mark></p>
+        </section>
+        <section>
+            <p>Functions can be <mark>anonymous</mark> (without name) and <mark>assigned to a constant or a variable</mark>:</p>
+            <pre><code data-trim class="javascript">
+const add = function (a, b) { // function expression
+  return a + b;
+};
+
+add(1, 2); // 3
+                    </code></pre>
+            <p>Functions can be written using the <mark>arrow function</mark> syntax:</p>
+            <pre><code data-trim class="javascript">
+const add = (a, b) => {
+  return a + b;
+};
+// even shorter: the value is returned by default
+const add = (a, b) => a + b;
+					</code></pre>
+        </section>
+        <section>
+            <h2 class="no-text-transform">Object methods</h2>
+            <p>Functions stored as properties of objects...</p>
+            <pre><code data-trim class="javascript">
+const person = {
+  firstName: 'John',
+  lastName: 'Example',
+  age: 30,
+
+  letMeIntroduceMyself: function () {
+    return 'My name is ' + this.firstName + ' ' + this.lastName;
+  }
+};
+
+person.letMeIntroduceMyself(); // My name is John Example
+                </code></pre>
+            <p>...are called <mark>methods</mark></p>
+        </section>
+        <section>
+            <h3 class="no-text-transform">Object methods in classes</h3>
+            <pre><code data-trim class="javascript">
+class Person {
+  constructor(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
+
+  letMeIntroduceMyself() {
+    // this is a template literal
+    return `My name is ${this.firstName} ${this.lastName}`;
+  }
+}
+                </code></pre>
+        </section>
+        <section>
+            <h3 class="no-text-transform">Arrays</h3>
+            <p>can be created using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#array_literals">array literals</a>:</p>
+            <pre><code data-trim class="javascript">
+const myNumbers = [2, 4, 8, 12, 56, 13];
+const lastIndex = myNumbers.length - 1; // arrays are zero-indexed
+const lastNumber = myNumbers[lastIndex]; // access last element
+myNumbers.push(42); // add to the end
+myNumbers.pop(); // remove from the end
+myNumbers.shift(); // remove from the front
+myNumbers.unshift(1); // add to the front
+                </code></pre>
+        </section>
+        <section>
+            <h3 class="no-text-transform">Loop over arrays: </h3>
+            <pre><code data-trim class="javascript">
+const myNumbers = [2, 4, 8, 12, 56, 13];
+// for statement
+for (let i = 0; i < myNumbers.length: i++) {
+  const myNumber = myNumbers[i];
+  console.log(myNumber);
+}
+// for...of statement
+for (let myNumber of myNumbers) {
+  console.log(myNumber);
+}
+// forEach()
+myNumbers.forEach(myNumber => console.log(myNumber));
+                </code></pre>
+        </section>
+        <section>
+            <hgroup>
+                <h2 class="no-text-transform highlight-secondary">JavaScript</h2>
+                <h1 class="no-text-transform highlight-secondary">in the browser</h1>
+            </hgroup>
+        </section>
+        <section>
+            <h3 class="no-text-transform">Document Object Model (DOM)</h3>
+            <ul>
+                <li>Web browsers parse an HTML document, turning it into a DOM tree. A DOM tree is an <mark>in-memory representation</mark> of the document</li>
+                <li>The DOM tree can be <mark>manipulated</mark> from scripts (typically in <mark>JavaScript</mark>) in the page - through the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Document interface</a></li>
+                <li>Each element in the DOM tree is <mark>represented by an object</mark>, and these objects have <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">APIs</a> so that they can be manipulated</li>
+            </ul>
+        </section>
+        <section>
+            <h3 class="no-text-transform">The use of the document and element JavaScript APIs</h3>
+            <pre><code data-trim class="html">
+  &lt;form&gt;
+    &lt;input id="firstName"&gt;
+  &lt;/form&gt;
+</code></pre>
+            <pre><code data-trim class="javascript">
+// document is available in the browser's global scope
+const inputElement = document.querySelector(
+	'#firstName'); // #firstName is a CSS selector
+// print the value of the input's value property
+console.log(inputElement.value);
+</code></pre>
+        </section>
+        <section>
+            <h3 class="no-text-transform">DOM interfaces: attributes vs. properties</h3>
+            <div style="display: flex">
+					<pre><code data-trim class="html">
+  &lt;form&gt;
+    &lt;input id="firstName" value="John"&gt;
+  &lt;/form&gt;
+					</code></pre>
+                <img style="align-self: center; margin-left: .5rem" src="../assets/img/input-value-1.png">
+            </div>
+            <pre><code data-trim class="javascript">
+const inputElement = document.querySelector('#firstName');
+inputElement.value; // John - property value
+inputElement.getAttribute('value'); // John - attribute value
+					</code></pre>
+            <div style="display: flex">
+                <img style="align-self: center; margin-right: .5rem" src="../assets/img/input-value-2.png">
+                <pre><code data-trim class="javascript">
+inputElement.value; // Adam
+inputElement.getAttribute('value'); // John
+						</code></pre>
+            </div>
+        </section>
+        <section>
+            <h2 class="no-text-transform">Event interface</h2>
+            <p>represents an event which takes place in the DOM<a href="https://developer.mozilla.org/en-US/docs/Web/API/Event" target="_blank"><small>*</small></a></p>
+            <pre><code data-trim class="html">
+  &lt;form&gt;
+    &lt;input id="firstName"&gt;
+  &lt;/form&gt;
+					</code></pre>
+            <pre><code data-trim class="javascript">
+const inputElement = document.querySelector('#firstName');
+inputElement.addEventListener( // add a listener to the input
+    'keyup', // the event type
+    event => // object which implements the event interface
+            console.log(event.target.value));
+					</code></pre>
+        </section>
+        <section>
+            <h1 class="no-text-transform highlight-secondary">Exercise JavaScript</h1>
+        </section>
+        <section id="jsExercise">
+            <h2 class="no-text-transform">Exercise JavaScript (1)</h2>
+            <ul>
+                <li>Create a JavaScript file (<code class="code">index.js</code>) next to the <code class="code">index.html</code> created in the <a href="#htmlExercise">HTML exercise</a>.</li>
+                <li>Using the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script" target="_blank"><code class="code">&lt;script&gt;</code></a> element load the JavaScript code from <code class="code">index.js</code>. Add the <code class="code">&lt;script&gt;</code> element at the end of the HTML document's <code class="code">&lt;body&gt;</code>.</code></li>
+                <li>Go to <code class="code">index.js</code> and create the <code class="code">Employee</code> class having the <code class="code">firstName</code> and <code class="code">lastName</code> properties.</li>
+            </ul>
+        </section>
+        <section>
+            <h2 class="no-text-transform">Exercise JavaScript (2)</h2>
+            <ul>
+                <li>The <code class="code">&lt;button&gt;</code> element defaults to the <code class="code">submit</code> type and as such submits the form to the server upon click (unless the <code class="code">type</code> attribute is set to e.g. <code class="code">"button"</code>).</li>
+                <li>Add a handler to the <code class="code">&lt;form&gt;</code> element on the <code class="code">submit</code> event. In the handler call <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault"><code class="code">event.preventDefault()</code></a> to prevent submitting the form to the server.</li>
+                <li>Instead, get the current first and last name values from the form, create an <code class="code">Employee</code> object and print it to the console.</li>
+            </ul>
+        </section>
+    </div>
+</div>
+
+<script src="../assets/js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        hash: true,
+        dependencies: [
+            { src: '../assets/plugin/markdown/marked.js' },
+            { src: '../assets/plugin/markdown/markdown.js' },
+            { src: '../assets/plugin/notes/notes.js', async: true },
+            { src: '../assets/plugin/highlight/highlight.js', async: true }
+        ]
+    });
+</script>
+</body>
+</html>
